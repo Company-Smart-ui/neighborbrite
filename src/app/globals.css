@@ -16,4 +16,23 @@
   }
 }
 
-body {}
+body {
+  padding: 20px;
+}
+
+
+input{
+  border:solid #aeaef1 2px;
+  padding: 10px;
+  margin: 5px;
+
+}
+
+button{
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  color: white;
+  display: inline-flex;
+  background-color: #2c68ff;
+}
