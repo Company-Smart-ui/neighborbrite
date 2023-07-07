@@ -5,10 +5,7 @@ import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-type TProps ={
-	email: string | null | undefined
-}
-export const SendData:FC<TProps> =({email=""})=> {
+export const SendData =({email=""})=> {
 
 	const [search , setSearch]= useState("");
 
@@ -37,7 +34,7 @@ export const SendData:FC<TProps> =({email=""})=> {
 
 
 
-	const findHandler= (e?:any )=>{
+	const findHandler= (e )=>{
 		e?.preventDefault()
 
 		axios.get("api/emails/?email="+serchRef.current.value, )
@@ -45,7 +42,7 @@ export const SendData:FC<TProps> =({email=""})=> {
 				console.log(e)
 				setSearch("404")
 			})
-			.then((e:any)=>{
+			.then((e)=>{
 				console.log(e?.data.Item.text.S)
 					setSearch(e?.data?.Item?.text.S)
 				}
